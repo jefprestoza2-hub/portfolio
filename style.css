@@ -125,11 +125,11 @@ footer { text-align: center; padding: 60px 20px; opacity: 0.5; font-size: 0.8rem
 /* --- Resume Button Styles --- */
 .resume-btn {
     display: inline-block;
-    background-color: var(--accent); /* This uses your light blue/green color */
-    color: #0f172a !important;     /* This keeps the text dark and readable */
+    background-color: var(--accent);
+    color: #0f172a !important;     
     padding: 12px 28px;
-    border-radius: 50px;           /* Makes it a nice pill shape */
-    text-decoration: none;
+    border-radius: 50px;           
+    text-decoration: none !important; /* ADDED !important HERE */
     font-weight: bold;
     margin-top: 10px;
     transition: 0.3s ease;
@@ -137,10 +137,12 @@ footer { text-align: center; padding: 60px 20px; opacity: 0.5; font-size: 0.8rem
 }
 
 .resume-btn:hover {
+    text-decoration: none !important; /* ADDED !important HERE */
     background-color: transparent;
     color: var(--accent) !important;
-    transform: translateY(-3px);   /* Makes it "float" slightly when hovered */
-    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2); /* Adds a subtle glow */
+    transform: translateY(-3px);   
+    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2); 
 }
+
 
 

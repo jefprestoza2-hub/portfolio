@@ -51,19 +51,20 @@
 
         <div class="video-grid">
             <div class="video-card">
-                <video controls poster="thumb1.jpg">
+                <video id="sampleVideo" controls controlsList="nodownload" poster="thumb1.jpg">
                     <source src="videos/production samples.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                <div class="playback-controls">
+                    <button type="button" onclick="document.getElementById('sampleVideo').currentTime=0; document.getElementById('sampleVideo').play();">REPLAY</button>
+                    <label>
+                        <input type="checkbox" onchange="document.getElementById('sampleVideo').loop = this.checked;"> Loop
+                    </label>
+                </div>
+
                 <div class="video-info">
                     <p>Full scene cleanup and in-betweening. Focused on maintaining iconic line-weight and volume.</p>
-                </div>
-            </div>
-
-            <div class="video-card placeholder">
-                <div class="video-info">
-                    <h3>Additional Samples</h3>
-                    <p>More Harmony production clips currently under review.</p>
                 </div>
             </div>
         </div>
@@ -91,7 +92,3 @@
 
 </body>
 </html>
-
-
-
-

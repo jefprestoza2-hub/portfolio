@@ -28,12 +28,11 @@ h1 { font-size: 3rem; margin: 0; color: var(--accent); letter-spacing: -1px; }
 
 .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 20px; }
 
-/* FIXED CREDITS GRID */
 .credits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 12px;
-    grid-auto-rows: 1fr; /* This keeps every box exactly the same height */
+    grid-auto-rows: 1fr;
     align-items: stretch;
 }
 
@@ -54,7 +53,6 @@ h1 { font-size: 3rem; margin: 0; color: var(--accent); letter-spacing: -1px; }
 
 .award { display: block; font-size: 0.7rem; color: #fbbf24; margin-top: 4px; font-weight: bold; }
 
-/* DREAMWORKS CARD */
 .coming-soon {
     background: linear-gradient(145deg, #0f172a, #1e293b);
     border-color: #334155;
@@ -64,7 +62,6 @@ h1 { font-size: 3rem; margin: 0; color: var(--accent); letter-spacing: -1px; }
 .movie-title { font-size: 0.95rem; font-weight: bold; margin: 5px 0; }
 .release-date { font-size: 0.65rem; color: var(--dream-green); border: 1px solid var(--dream-green); padding: 2px 8px; border-radius: 12px; }
 
-/* MOVING LOADING BAR */
 .loading-bar {
     width: 40px; height: 1px; background: #334155; margin: 8px auto; position: relative; overflow: hidden;
 }
@@ -78,11 +75,9 @@ h1 { font-size: 3rem; margin: 0; color: var(--accent); letter-spacing: -1px; }
     100% { transform: translateX(70px); }
 }
 
-/* VIDEO GRID */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .video-card {
@@ -91,15 +86,16 @@ h1 { font-size: 3rem; margin: 0; color: var(--accent); letter-spacing: -1px; }
     overflow: hidden;
     border: 1px solid #334155;
     transition: 0.3s;
+    width: 100%; /* Gamitin ang buong lapad ng container */
+    max-width: 1100px; /* Nilakihan ko ito para pantay sa main container */
 }
 
-.video-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.video-card:hover { border-color: var(--accent); }
 
 video { width: 100%; aspect-ratio: 16 / 9; background: #000; display: block; }
 
 .video-info { padding: 20px; }
-.video-info h3 { margin: 0; color: var(--accent); font-size: 1.1rem; }
-.video-info p { font-size: 0.9rem; opacity: 0.8; margin-top: 10px; }
+.video-info p { font-size: 1rem; opacity: 0.8; margin-top: 10px; }
 
 .tech-stack {
     margin-top: 60px; text-align: center; padding: 40px; background: rgba(30, 41, 59, 0.5); border-radius: 15px; border: 1px solid #334155;
@@ -120,16 +116,15 @@ footer { text-align: center; padding: 60px 20px; opacity: 0.5; font-size: 0.8rem
 
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
-    .video-grid { grid-template-columns: 1fr; }
 }
-/* --- Resume Button Styles --- */
+
 .resume-btn {
     display: inline-block;
     background-color: var(--accent);
     color: #0f172a !important;     
     padding: 12px 28px;
     border-radius: 50px;           
-    text-decoration: none !important; /* ADDED !important HERE */
+    text-decoration: none !important;
     font-weight: bold;
     margin-top: 10px;
     transition: 0.3s ease;
@@ -137,12 +132,34 @@ footer { text-align: center; padding: 60px 20px; opacity: 0.5; font-size: 0.8rem
 }
 
 .resume-btn:hover {
-    text-decoration: none !important; /* ADDED !important HERE */
+    text-decoration: none !important;
     background-color: transparent;
     color: var(--accent) !important;
     transform: translateY(-3px);   
     box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2); 
 }
 
+.playback-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background: #0f172a;
+    border-top: 1px solid #334155;
+}
 
+.playback-controls button {
+    background: var(--accent);
+    border: none;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
+.playback-controls label {
+    font-size: 0.9rem;
+    color: var(--accent);
+    cursor: pointer;
+}
